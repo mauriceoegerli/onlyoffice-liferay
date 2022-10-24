@@ -36,17 +36,6 @@ jobs:
           echo "::set-output name=package::$(sed -n -e 's/^Bundle-SymbolicName: //p' bnd.bnd)"
           echo "::set-output name=version::$(sed -n -e 's/^Bundle-Version: //p' bnd.bnd)"
         id: info
-      - name: Create Release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-          draft: false
-          prerelease: false
-          release_name: v${{ steps.info.outputs.version }}
-          tag_name: v${{ steps.info.outputs.version }}
-          body_path: ./RELEASE.md
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
   build:
     needs: [platforms,release]
     runs-on: ubuntu-latest
