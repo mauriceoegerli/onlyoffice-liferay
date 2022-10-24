@@ -1,6 +1,7 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
     branches: [master]
 
@@ -91,12 +92,8 @@ jobs:
           blade gw jar
           cd ./onlyoffice-liferay/build/libs
           mv ${{ steps.info.outputs.package }}-${{ steps.info.outputs.version }}.jar $cwd/
-      - name: Upload Release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
         with:
-          upload_url: ${{ needs.release.outputs.upload_url }}
-          asset_path: ${{ steps.info.outputs.package }}-${{ steps.info.outputs.version }}.jar
-          asset_name: ${{ steps.info.outputs.package }}-${{ steps.info.outputs.version }}-${{ matrix.name }}.jar
-          asset_content_type: application/java-archive
+          name: ${{ steps.info.outputs.package }}-${{ steps.info.outputs.version }}-${{ matrix.name }}
+          path: ${{ steps.info.outputs.package }}-${{ steps.info.outputs.version }}.jar
