@@ -1,19 +1,5 @@
 [
     {
-        "name": "DXP7.2",
-        "platform": "dxp-7.2-ga1"
-    },
-    {
-        "name": "DXP7.2-FP5",
-        "platform": "dxp-7.2-fp5",
-        "branch": "feature/ce-7.3"
-    },
-    {
-        "name": "DXP7.3",
-        "platform": "dxp-7.3-ga1",
-        "branch": "feature/dxp-7.3"
-    },
-    {
         "name": "DXP7.4",
         "platform": "dxp-7.4-ga1",
         "branch": "feature/ce-7.4"
@@ -22,15 +8,6 @@
         "name": "DXP7.4-U18",
         "platform": "dxp-7.4-u18",
         "branch": "feature/ce-7.4-ga18"
-    },
-    {
-        "name": "CE7.2",
-        "platform": "portal-7.2-ga1"
-    },
-    {
-        "name": "CE7.3",
-        "platform": "portal-7.3-ga1",
-        "branch": "feature/ce-7.3"
     },
     {
         "name": "CE7.4",
